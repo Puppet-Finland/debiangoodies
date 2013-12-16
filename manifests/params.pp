@@ -1,0 +1,16 @@
+#
+# == Class: debiangoodies::params
+#
+# Defines some variables based on the operating system
+#
+class debiangoodies::params {
+
+    case $::osfamily {
+        'Debian': {
+            $package_name = 'debian-goodies'
+        }
+        default: { 
+            $package_name = 'debian-goodies'
+        }
+    }
+}

@@ -3,12 +3,16 @@
 #
 # Install debiangoodies
 #
-class debiangoodies::install {
+class debiangoodies::install
+(
+    $status
+)
+{
 
     include debiangoodies::params
 
     package { 'debiangoodies':
-        ensure => present,
+        ensure => $status,
         name => "${::debiangoodies::params::package_name}",
 	}
 }

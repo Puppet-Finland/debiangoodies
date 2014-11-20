@@ -9,7 +9,7 @@
 #
 # == Examples
 #
-# include debiangoodies
+#   include debiangoodies
 #
 # == Authors
 #
@@ -17,8 +17,7 @@
 #
 # == License
 #
-# BSD-lisence
-# See file LICENSE for details
+# BSD-license. See file LICENSE for details.
 #
 class debiangoodies
 (

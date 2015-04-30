@@ -5,14 +5,14 @@
 #
 class debiangoodies::install
 (
-    $status
+    $ensure
 )
 {
 
-    include debiangoodies::params
+    include ::debiangoodies::params
 
     package { 'debiangoodies':
-        ensure => $status,
-        name => "${::debiangoodies::params::package_name}",
-	}
+        ensure => $ensure,
+        name   => $::debiangoodies::params::package_name,
+  }
 }

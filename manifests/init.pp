@@ -5,7 +5,9 @@
 #
 # == Parameters
 #
-# None at the moment
+# [*manage*]
+#  Whether to manage debiangoodies with Puppet or not. Valid values are 'yes' 
+#  (default) and 'no'.
 #
 # == Examples
 #
@@ -21,16 +23,16 @@
 #
 class debiangoodies
 (
-    $status = 'present'
+    $manage = 'yes',
+    $ensure = 'present'
 )
 {
 
-# Rationale for this is explained in init.pp of the sshd module
-if hiera('manage_debiangoodies', 'true') != 'false' {
+if $manage == 'yes' {
 
     if $::osfamily == 'Debian' {
-        class { 'debiangoodies::install':
-            status => $status,
+        class { '::debiangoodies::install':
+            ensure => $ensure,
         }
     }
 }

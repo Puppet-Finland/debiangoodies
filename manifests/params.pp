@@ -9,8 +9,8 @@ class debiangoodies::params {
         'Debian': {
             $package_name = 'debian-goodies'
         }
-        default: { 
-            $package_name = 'debian-goodies'
+        default: {
+            fail("Unsupported operating system ${::osfamily}")
         }
     }
 }
